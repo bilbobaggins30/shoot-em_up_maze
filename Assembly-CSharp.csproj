@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\EditorTools.cs" />
      <Compile Include="Assets\Scripts\KeyboardControls.cs" />
      <Compile Include="Assets\Scripts\MasterController.cs" />
+     <Compile Include="Assets\Scripts\Maze.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PathNode.cs" />
      <None Include="Assets\MapsToImport\test3.txt" />
@@ -69,6 +70,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{A9607812-E574-F04B-DC12-9EFD7C6F6798}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

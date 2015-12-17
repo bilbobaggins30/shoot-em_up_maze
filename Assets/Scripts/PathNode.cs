@@ -6,7 +6,7 @@ using System;
 [Serializable]
 public class PathNode
 {
-	//If True then there exists a wall
+	//If false then there exists a wall
 	public bool Up = true, Left=true, Down = true, Right = true;
 	public int TextVal = 4;
 	

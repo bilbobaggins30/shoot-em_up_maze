@@ -97,7 +97,9 @@ public class MasterController: MonoBehaviour {
 	public void OnLevelWasLoaded()
 	{
 		if (MainControl == this) {
-			MenuItems.ImportMap(MenuItems.CreateMaze(30));
+			int[] nodesToContainThings = new int[1800];
+			int check = Maze.checkCorrectness(MenuItems.ImportMap(MenuItems.CreateMaze(30)),30, nodesToContainThings);
+			Debug.Log(check);
 
 			/*FileStream LoadFile;
 			BinaryFormatter bf = new BinaryFormatter();

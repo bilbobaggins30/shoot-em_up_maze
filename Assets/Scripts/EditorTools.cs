@@ -240,7 +240,6 @@ public class MenuItems : MonoBehaviour
 			String path = EditorUtility.SaveFilePanel("Save Maze","","","txt");
 			File.WriteAllLines(path,lines);
 		}
-		Debug.Log("here");
 		return String.Join("\n",lines);
 	}
 
