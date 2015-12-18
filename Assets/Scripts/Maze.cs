@@ -39,6 +39,8 @@ public class Maze {
 					}
 					if(lengthArray[y+1,x] > longestPath)
 					{
+						nodesToContainThings[0] = x;
+						nodesToContainThings[1] = y+1;
 						longestPath = lengthArray[y+1,x];
 					}
 				}
@@ -61,6 +63,8 @@ public class Maze {
 					}
 					if(lengthArray[y,x+1] > longestPath)
 					{
+						nodesToContainThings[0] = x+1;
+						nodesToContainThings[1] = y;
 						longestPath = lengthArray[y,x+1];
 					}
 				}
@@ -83,6 +87,8 @@ public class Maze {
 					}
 					if(lengthArray[y-1,x] > longestPath)
 					{
+						nodesToContainThings[0] = x;
+						nodesToContainThings[1] = y-1;
 						longestPath = lengthArray[y-1,x];
 					}
 				}
@@ -105,6 +111,8 @@ public class Maze {
 					}
 					if(lengthArray[y,x-1] > longestPath)
 					{
+						nodesToContainThings[0] = x-1;
+						nodesToContainThings[1] = y;
 						longestPath = lengthArray[y,x-1];
 					}
 				}

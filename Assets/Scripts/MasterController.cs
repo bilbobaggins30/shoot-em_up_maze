@@ -46,7 +46,7 @@ public class MasterController: MonoBehaviour {
 	void Awake () {
 		if (MainControl == null) {
 			Application.targetFrameRate = 30;
-			DontDestroyOnLoad (gameObject);
+			DontDestroyOnLoad (this);
 			MainControl = this;
 			if(!System.IO.File.Exists(Application.persistentDataPath + "/Save.dat"))
 			{
@@ -94,13 +94,18 @@ public class MasterController: MonoBehaviour {
 		}
 	}
 
+	public void NextLevel()
+	{
+		Application.LoadLevel(0);
+	}
+
 	public void OnLevelWasLoaded()
 	{
 		if (MainControl == this) {
 			int[] nodesToContainThings = new int[1800];
-			int check = Maze.checkCorrectness(MenuItems.ImportMap(MenuItems.CreateMaze(30)),30, nodesToContainThings);
-			Debug.Log(check);
-
+			Maze.checkCorrectness(MenuItems.ImportMap(MenuItems.CreateMaze(30)),30, nodesToContainThings);
+			GameObject Finish = Instantiate(Resources.Load("Collectibles/Finish", typeof(GameObject))) as GameObject;
+			Finish.transform.position = new Vector3((float)(nodesToContainThings[0]*5+2.5), 0.5f, (float)(nodesToContainThings[1]*5+2.5));
 			/*FileStream LoadFile;
 			BinaryFormatter bf = new BinaryFormatter();
 			string temppath = Application.loadedLevelName;
